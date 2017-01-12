@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-__author__ = 'renhaiqing123'
 import xlrd
 import xlwt
 
