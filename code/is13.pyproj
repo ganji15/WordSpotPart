@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{dd8b0877-9355-4356-88cf-e541f34fec64}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>TestModel.py</StartupFile>
+    <StartupFile>GenerateExcels.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -26,6 +26,9 @@
     <Compile Include="examples\elman-forward.py" />
     <Compile Include="examples\elman-keras.py" />
     <Compile Include="examples\jordan-forward.py" />
+    <Compile Include="GenerateExcels.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="jordan.py">
       <SubType>Code</SubType>
     </Compile>
@@ -47,6 +50,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="utils\tools.py" />
+    <Compile Include="utils\Wr_Excel.py" />
     <Compile Include="utils\__init__.py" />
     <Compile Include="doword2vec.py">
       <SubType>Code</SubType>

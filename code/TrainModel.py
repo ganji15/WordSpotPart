@@ -26,7 +26,7 @@ if __name__ == '__main__':
          'emb_dimension':100, # dimension of word embedding
          'nepochs':200}
 
-    trainset = cPickle.load(open('data/zhdata.pkl' , 'r'))
+    trainset = cPickle.load(open('zhdata.pkl' , 'r'))
     
     train_str = trainset[0]
     [train_lex] = trainset[1] 
@@ -87,7 +87,7 @@ if __name__ == '__main__':
                 acc_count += sum(1 for i in xrange(len(true)) if pred[i] == true[i])
 
             cur_acc = (acc_count * 100. / all_count)
-            print 'train acc: %.2f%%'%cur_acc
+            print '\ntrain acc: %.2f%%'%cur_acc
 
             if cur_acc > best_f1:
                 best_f1 = cur_acc

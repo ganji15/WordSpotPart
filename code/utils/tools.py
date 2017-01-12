@@ -137,14 +137,14 @@ def formatDataset(path):
         xs.append(x)
         ys.append(y)
 
-    cPickle.dump([xstrs, [xs], [ys]], open('data/zhdata.pkl', 'w'))
-    print 'save model: data/zhdata.pkl'
+    cPickle.dump([xstrs, [xs], [ys]], open('zhdata.pkl', 'w'))
+    print 'save model: zhdata.pkl'
 
 
 def loadTestdata(path):
     import cPickle
     data = cPickle.load(open(path, 'rb'))
-    data = data[800:]
+    #data = data[:800]
 
     xs = []
     xstrs = []
@@ -158,19 +158,20 @@ def loadTestdata(path):
 
 
 def print_pred(pred, words):
+    strs = get_pred(pred, words)
+    for i in xrange(len(label_dict)):
+        print label_dict[i], ':', strs[i]
+
+
+def get_pred(pred, words):
     strs = []
     for j in xrange(len(words)):
-        #print 'wj-i', words[j - 1]
                 
         if (j > 0 and j <= (len(words) - 1)) and \
             isWordAllnum(words[j - 1]):
             pred[j - 1] = pred[j]
-            #print 'set: ', words[j - 1], 'to: %s'%label_dict[pred[j]]
-
 
     for i in xrange(len(label_dict)):
         strs.append(''.join(words[j] for j in xrange(len(words)) if pred[j] == i))
 
-    
-    for i in xrange(len(label_dict)):
-        print label_dict[i], ':', strs[i]
+    return strs
