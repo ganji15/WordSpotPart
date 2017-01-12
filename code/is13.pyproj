@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{dd8b0877-9355-4356-88cf-e541f34fec64}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>GenerateExcels.py</StartupFile>
+    <StartupFile>GUI.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,25 +21,12 @@
     <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="data\load.py" />
-    <Compile Include="data\__init__.py" />
-    <Compile Include="examples\elman-forward.py" />
-    <Compile Include="examples\elman-keras.py" />
-    <Compile Include="examples\jordan-forward.py" />
     <Compile Include="GenerateExcels.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="jordan.py">
+    <Compile Include="GUI.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="metrics\accuracy.py" />
-    <Compile Include="metrics\__init__.py" />
-    <Compile Include="rnn\elman.py" />
-    <Compile Include="rnn\jordan.py" />
-    <Compile Include="rnn\shop.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="rnn\__init__.py" />
     <Compile Include="ProcessDataset.py">
       <SubType>Code</SubType>
     </Compile>
@@ -49,22 +36,19 @@
     <Compile Include="TrainModel.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="utils\Rd_Excel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utils\recognize.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="utils\tools.py" />
     <Compile Include="utils\Wr_Excel.py" />
     <Compile Include="utils\__init__.py" />
-    <Compile Include="doword2vec.py">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="data" />
-    <Folder Include="examples" />
-    <Folder Include="metrics" />
-    <Folder Include="rnn" />
+    <Folder Include="imgs\" />
     <Folder Include="utils" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="conlleval.pl" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />

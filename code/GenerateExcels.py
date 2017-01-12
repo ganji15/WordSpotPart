@@ -18,14 +18,6 @@ from keras.layers import (Input, Embedding, SimpleRNN, Dense, Activation,
 
 if __name__ == '__main__':
 
-    s = {'fold':3, # 5 folds 0,1,2,3,4
-         'lr':0.1,
-         'verbose':1,
-         'nhidden':100, # number of hidden units
-         'seed':345,
-         'emb_dimension':100, # dimension of word embedding
-         'nepochs':50}
-
     model =  model_from_json(open('model.json').read())  
     model.load_weights('model.h5')  
 

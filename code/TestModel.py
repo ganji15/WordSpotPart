@@ -22,31 +22,8 @@ from keras.layers import (Input, Embedding, SimpleRNN, Dense, Activation,
 
 if __name__ == '__main__':
 
-    s = {'fold':3, # 5 folds 0,1,2,3,4
-         'lr':0.1,
-         'verbose':1,
-         'nhidden':100, # number of hidden units
-         'seed':345,
-         'emb_dimension':100, # dimension of word embedding
-         'nepochs':50}
-
     model =  model_from_json(open('model.json').read())  
     model.load_weights('model.h5')  
-
-    #trainset = loadTestdata('E:/is13/E-DATA/w_a_t')
-    #train_str = trainset[0]
-    #[train_lex] = trainset[1] 
-    #nsentences = len(train_lex)
-
-    #for i in xrange(nsentences):
-    #    X = np.asarray([embdingWords(train_lex[i])])
-    #    if X.shape[1] == 1:
-    #        continue # bug with X, Y of len 1
-    #    pred = model.predict_on_batch(np.asarray(X)).argmax(2)[0]
-    #    print ' '.join(train_str[i])
-
-    #    print_pred(pred, train_str[i])
-    #    raw_input()
 
     while True:
         str = raw_input(u'“µŒÒ√Ë ˆ: '.encode('gb18030')).decode(sys.stdin.encoding or locale.getpreferredencoding(True))

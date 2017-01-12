@@ -2,6 +2,7 @@
 import xlrd
 import xlwt
 
+
 def set_style(name,height,bold=False):
   style = xlwt.XFStyle() # 初始化样式
   font = xlwt.Font() # 为样式创建字体
@@ -11,6 +12,7 @@ def set_style(name,height,bold=False):
   font.height = height
   style.font = font
   return style
+
 
 #写excel
 def write_excel(rows):
@@ -24,6 +26,7 @@ def write_excel(rows):
         for j in xrange(len(rows[i][1])):
             sheet1.write(i+1,j+1,rows[i][1][j])
     filename.save('output.xls')
+
 
 if __name__ == '__main__':
     rows=[]

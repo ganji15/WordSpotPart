@@ -45,4 +45,3 @@ def read_excel(src_path, dst_path):
 
   with open(dst_path,'w') as f:
     pkl.dump(w_a_t, f)
-

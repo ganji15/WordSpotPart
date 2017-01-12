@@ -107,7 +107,6 @@ def formatSample(sentence, labels=None):
             
             rt_labels.append(label)
 
-
         if isWordAllnum(word):
             word = word2vec_model.vocab[4]
         

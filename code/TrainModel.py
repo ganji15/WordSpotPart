@@ -24,7 +24,7 @@ if __name__ == '__main__':
          'nhidden':100, # number of hidden units
          'seed':345,
          'emb_dimension':100, # dimension of word embedding
-         'nepochs':200}
+         'nepochs':400}
 
     trainset = cPickle.load(open('zhdata.pkl' , 'r'))
     
